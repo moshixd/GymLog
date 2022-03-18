@@ -2,8 +2,8 @@ package net.moshi.gymlog;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import net.moshi.gymlog.model.User;
-import net.moshi.gymlog.repository.UserRepository;
+import net.moshi.gymlog.User.User;
+import net.moshi.gymlog.User.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -35,7 +35,7 @@ public class UserRepositoryTests {
 
         User existUser = entityManager.find(User.class, savedUser.getId());
 
-        assertThat(existUser.getEmail().equals(user.getEmail()));
+        assertThat(existUser.getId().equals(user.getId()));
     }
 
     @Test

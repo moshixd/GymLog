@@ -1,4 +1,4 @@
-package net.moshi.gymlog.model;
+package net.moshi.gymlog.User;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +41,7 @@ public class UserController {
         user.setPassword(encodedPassword);
         this.userService.save(user);
         ra.addFlashAttribute("message", "The user has been saved successfully");
-        return "redirect:/users";
+        return "redirect:/list_users";
     }
 
     @GetMapping({"/list_users/edit/{id}"})
@@ -53,7 +53,7 @@ public class UserController {
             return "signUp_form";
         } catch (UsernameNotFoundException var5) {
             ra.addFlashAttribute("message", "The user has been edited successfully.");
-            return "redirect:/users";
+            return "redirect:/list_users";
         }
     }
 
@@ -62,6 +62,6 @@ public class UserController {
         this.userService.getById(id);
         this.userService.deleteById(id);
         ra.addFlashAttribute("message", "The user ID has beeen deleted");
-        return "redirect:/users";
+        return "redirect:/list_users";
     }
 }

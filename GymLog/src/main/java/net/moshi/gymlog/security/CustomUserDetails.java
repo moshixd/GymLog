@@ -1,6 +1,6 @@
 package net.moshi.gymlog.security;
 
-import net.moshi.gymlog.model.User;
+import net.moshi.gymlog.User.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
