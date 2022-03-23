@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="reback">
+    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/AppController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/register_success.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/controller/AppController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/model/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/model/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetailsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/register_success.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" afterDir="false" />
     </list>
@@ -124,7 +114,15 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="net.moshi.gymlog.User" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.GymLogApplication">
+    <configuration name="generated-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="UserRepositoryTests.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GymLog" />
       <extension name="coverage">
@@ -136,6 +134,22 @@
       <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
       <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTests" />
       <option name="METHOD_NAME" value="testDeleteUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTests.testDeleteUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GymLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.moshi.gymlog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTests" />
+      <option name="METHOD_NAME" value="testDeleteUserById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,9 +200,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests#1" />
+        <item itemvalue="JUnit.UserRepositoryTests.testDeleteUserById" />
         <item itemvalue="JUnit.UserRepositoryTests.testDeleteUser" />
-        <item itemvalue="JUnit.UserRepositoryTests.testUpdateUser" />
-        <item itemvalue="JUnit.UserRepositoryTests.testFindAllUsers" />
         <item itemvalue="JUnit.UserRepositoryTests.testUpdateUser" />
         <item itemvalue="JUnit.UserRepositoryTests.testFindAllUsers" />
       </list>
@@ -216,6 +230,8 @@
       <workItem from="1647596419322" duration="4950000" />
       <workItem from="1647601437293" duration="84000" />
       <workItem from="1647601543545" duration="1759000" />
+      <workItem from="1647811299377" duration="1319000" />
+      <workItem from="1648060403803" duration="2948000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -235,7 +251,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1647604785292</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="update">
+      <created>1647609544120</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1647609544120</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +277,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="reback" />
-    <option name="LAST_COMMIT_MESSAGE" value="reback" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

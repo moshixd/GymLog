@@ -1,8 +1,6 @@
 package net.moshi.gymlog.User;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping({"/list_users"})
     public String viewUsersList(Model model) {
-        List<User> listUsers = this.userService.listAllUsers();
+        List<User> listUsers = userService.listAllUsers();
         model.addAttribute("listUsers", listUsers);
         return "users";
     }
@@ -39,7 +39,7 @@ public class UserController {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-        this.userService.save(user);
+        userService.save(user);
         ra.addFlashAttribute("message", "The user has been saved successfully");
         return "redirect:/list_users";
     }
@@ -47,21 +47,25 @@ public class UserController {
     @GetMapping({"/list_users/edit/{id}"})
     public String showEditForm(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
         try {
-            User user = this.userService.getById(id);
+            User user = userService.getById(id);
             model.addAttribute("user", user);
             model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
             return "signUp_form";
-        } catch (UsernameNotFoundException var5) {
-            ra.addFlashAttribute("message", "The user has been edited successfully.");
+        } catch (UserNotFoundException e) {
+            ra.addFlashAttribute("message", e.getMessage());
             return "redirect:/list_users";
         }
     }
 
     @DeleteMapping({"/list_users/delete/{id}"})
-    public String deleteUser(@PathVariable("id") Long id, RedirectAttributes ra) {
-        this.userService.getById(id);
-        this.userService.deleteById(id);
-        ra.addFlashAttribute("message", "The user ID has beeen deleted");
-        return "redirect:/list_users";
+    public String deleteUser(@PathVariable("id") Long id, RedirectAttributes ra) throws UserNotFoundException {
+        try {
+            userService.deleteById(id);
+            return "redirect:/list_users";
+        } catch (UserNotFoundException e) {
+            ra.addFlashAttribute("message", e.getMessage());
+            return "redirect:/list_users";
+        }
     }
 }
+

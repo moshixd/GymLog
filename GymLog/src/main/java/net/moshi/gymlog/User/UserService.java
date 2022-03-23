@@ -12,28 +12,26 @@ public class UserService {
     @Autowired
     private UserRepository repo;
 
-    public UserService() {
-    }
-
     public List<User> listAllUsers() {
-        return this.repo.findAll();
+        return (List<User>) repo.findAll();
     }
 
     public void save(User user) {
-        this.repo.save(user);
+        repo.save(user);
     }
 
-    public User getById(Long id) throws UsernameNotFoundException {
-        Optional<User> result = this.repo.findById(id);
+    public User getById(Long id) throws UserNotFoundException {
+        Optional<User> result = repo.findById(id);
         if (result.isPresent()) {
             return (User) result.get();
         } else {
-            throw new UsernameNotFoundException("Could not find any users with ID." + id);
+            throw new UserNotFoundException("Could not find any users with ID." + id);
         }
     }
 
-    public void deleteById(Long id) {
-        this.repo.deleteById(id);
+    public void deleteById(Long id) throws UserNotFoundException {
+        repo.deleteById(id);
     }
+
 }
 

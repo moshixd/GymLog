@@ -46,4 +46,10 @@ public class UserRepositoryTests {
 
         assertThat(user).isNotNull();
     }
+
+    @Test
+    public void testDeleteUserById() {
+        Long userId = 47L;
+        repo.deleteById(userId);
+    }
 }
