@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/register_success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/register_success.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +79,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>
@@ -231,7 +221,7 @@
       <workItem from="1647601437293" duration="84000" />
       <workItem from="1647601543545" duration="1759000" />
       <workItem from="1647811299377" duration="1319000" />
-      <workItem from="1648060403803" duration="2948000" />
+      <workItem from="1648060403803" duration="3958000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -257,7 +247,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1647609544120</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="update">
+      <created>1648063689985</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1648063689985</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -57,7 +57,7 @@ public class UserController {
         }
     }
 
-    @DeleteMapping({"/list_users/delete/{id}"})
+    @GetMapping({"/list_users/delete/{id}"})
     public String deleteUser(@PathVariable("id") Long id, RedirectAttributes ra) throws UserNotFoundException {
         try {
             userService.deleteById(id);
