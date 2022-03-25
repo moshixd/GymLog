@@ -49,7 +49,7 @@ public class UserRepositoryTests {
 
     @Test
     public void testDeleteUserById() {
-        Long userId = 47L;
+        Integer userId = 47;
         repo.deleteById(userId);
     }
 }

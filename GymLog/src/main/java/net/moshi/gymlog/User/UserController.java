@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @GetMapping({"/list_users/edit/{id}"})
-    public String showEditForm(@PathVariable("id") Long id, Model model, RedirectAttributes ra) {
+    public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {
         try {
             User user = userService.getById(id);
             model.addAttribute("user", user);
@@ -58,7 +58,7 @@ public class UserController {
     }
 
     @GetMapping({"/list_users/delete/{id}"})
-    public String deleteUser(@PathVariable("id") Long id, RedirectAttributes ra) throws UserNotFoundException {
+    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes ra) throws UserNotFoundException {
         try {
             userService.deleteById(id);
             return "redirect:/list_users";

@@ -20,7 +20,7 @@ public class UserService {
         repo.save(user);
     }
 
-    public User getById(Long id) throws UserNotFoundException {
+    public User getById(Integer id) throws UserNotFoundException {
         Optional<User> result = repo.findById(id);
         if (result.isPresent()) {
             return (User) result.get();
@@ -29,7 +29,7 @@ public class UserService {
         }
     }
 
-    public void deleteById(Long id) throws UserNotFoundException {
+    public void deleteById(Integer id) throws UserNotFoundException {
         repo.deleteById(id);
     }
 
