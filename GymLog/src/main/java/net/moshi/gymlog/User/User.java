@@ -16,14 +16,6 @@ public class User {
     @Column(nullable = false, length = 64)
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "person_id")
-    private Person person;
-
-    public Person getPerson() {
-        return person;
-    }
-
     @Column(nullable = false, length = 20)
     private String firstName;
 
