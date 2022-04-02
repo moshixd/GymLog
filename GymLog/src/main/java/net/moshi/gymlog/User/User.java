@@ -16,6 +16,14 @@ public class User {
     @Column(nullable = false, length = 64)
     private String password;
 
+    @OneToOne(targetEntity = Person.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person person;
+
+    public Person getPerson() {
+        return person;
+    }
+
     @Column(nullable = false, length = 20)
     private String firstName;
 

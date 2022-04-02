@@ -1,10 +1,12 @@
-package net.moshi.gymlog.User;
+package net.moshi.gymlog.controller;
 
+import net.moshi.gymlog.User.User;
+import net.moshi.gymlog.User.UserNotFoundException;
+import net.moshi.gymlog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -58,7 +60,7 @@ public class UserController {
     }
 
     @GetMapping({"/list_users/delete/{id}"})
-    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes ra) throws UserNotFoundException {
+    public String deleteUser(@PathVariable("id") Integer id, RedirectAttributes ra) {
         try {
             userService.deleteById(id);
             return "redirect:/list_users";
