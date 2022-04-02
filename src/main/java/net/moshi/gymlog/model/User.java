@@ -1,8 +1,6 @@
 package net.moshi.gymlog.model;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name = "users")

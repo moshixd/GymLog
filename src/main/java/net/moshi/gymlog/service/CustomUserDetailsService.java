@@ -1,7 +1,8 @@
-package net.moshi.gymlog.security;
+package net.moshi.gymlog.service;
 
 import net.moshi.gymlog.repository.UserRepository;
 import net.moshi.gymlog.model.User;
+import net.moshi.gymlog.security.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
