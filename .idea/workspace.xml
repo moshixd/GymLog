@@ -5,25 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/repository/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/static/img/gym.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/GymLog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/GymLog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/User/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -121,6 +109,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GymLog/src/main/resources/images" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -130,6 +119,12 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="net.moshi.gymlog.User" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\patri\Downloads\User_System-Spring-Boot-main\GymLog\GymLog\src\main\resources\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\patri\Downloads\User_System-Spring-Boot-main\GymLog\GymLog\src\main\resources\static\img" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="net.moshi.gymlog" />
@@ -258,6 +253,9 @@
       <workItem from="1648060403803" duration="4190000" />
       <workItem from="1648147346831" duration="712000" />
       <workItem from="1648214860504" duration="2019000" />
+      <workItem from="1648866608364" duration="297000" />
+      <workItem from="1649008276906" duration="977000" />
+      <workItem from="1649107359643" duration="2193000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -301,7 +299,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1648864648920</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="update">
+      <created>1648866893945</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1648866893945</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
