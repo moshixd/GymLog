@@ -11,8 +11,12 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private final UserRepository repo;
+
     @Autowired
-    private UserRepository repo;
+    public UserService(UserRepository repo) {
+        this.repo = repo;
+    }
 
     public List<User> listAllUsers() {
         return repo.findAll();

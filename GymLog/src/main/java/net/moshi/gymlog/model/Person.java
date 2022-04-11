@@ -1,14 +1,12 @@
 package net.moshi.gymlog.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Collection;
 
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -17,6 +15,7 @@ import javax.persistence.Table;
 public class Person {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Integer id;
 
@@ -26,16 +25,7 @@ public class Person {
     @Column(nullable = false, length = 20)
     private float height;
 
-    //Benchpress personal record
-    @Column
-    private float bpPr;
-
-    //Squat personal record
-    @Column
-    private float sqPr;
-
-    //Deadlift personal record
-    @Column
-    private float dlPr;
+    @OneToMany
+    private Collection<Records> records;
 
 }

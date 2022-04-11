@@ -17,7 +17,7 @@ public class User {
     private String password;
 
     @OneToOne(targetEntity = Person.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    @JoinColumn(name = "person_id")
     private Person person;
 
 
