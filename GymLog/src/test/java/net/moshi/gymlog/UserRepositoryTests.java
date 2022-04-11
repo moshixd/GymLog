@@ -2,7 +2,7 @@ package net.moshi.gymlog;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import net.moshi.gymlog.User.User;
+import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

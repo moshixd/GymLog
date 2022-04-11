@@ -1,7 +1,7 @@
 package net.moshi.gymlog.controller;
 
-import net.moshi.gymlog.User.User;
-import net.moshi.gymlog.User.UserNotFoundException;
+import net.moshi.gymlog.model.User;
+import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -51,7 +51,7 @@ public class UserController {
         try {
             User user = userService.getById(id);
             model.addAttribute("user", user);
-            model.addAttribute("pageTitle", "Edit User (ID: " + id + ")");
+            model.addAttribute("pageTitle", "Edit model (ID: " + id + ")");
             return "signUp_form";
         } catch (UserNotFoundException e) {
             ra.addFlashAttribute("message", e.getMessage());

@@ -1,6 +1,6 @@
 package net.moshi.gymlog.repository;
 
-import net.moshi.gymlog.User.User;
+import net.moshi.gymlog.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

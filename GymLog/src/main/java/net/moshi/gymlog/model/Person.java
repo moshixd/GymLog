@@ -1,4 +1,4 @@
-package net.moshi.gymlog.User;
+package net.moshi.gymlog.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -25,5 +25,17 @@ public class Person {
 
     @Column(nullable = false, length = 20)
     private float height;
+
+    //Benchpress personal record
+    @Column
+    private float bpPr;
+
+    //Squat personal record
+    @Column
+    private float sqPr;
+
+    //Deadlift personal record
+    @Column
+    private float dlPr;
 
 }

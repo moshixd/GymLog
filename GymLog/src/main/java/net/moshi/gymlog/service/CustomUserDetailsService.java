@@ -1,7 +1,7 @@
 package net.moshi.gymlog.service;
 
 import net.moshi.gymlog.repository.UserRepository;
-import net.moshi.gymlog.User.User;
+import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.security.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,7 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = repo.findByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException("model not found");
         }
         return new CustomUserDetails(user);
     }

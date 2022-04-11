@@ -1,7 +1,7 @@
 package net.moshi.gymlog.service;
 
-import net.moshi.gymlog.User.User;
-import net.moshi.gymlog.User.UserNotFoundException;
+import net.moshi.gymlog.model.User;
+import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ public class UserService {
     private UserRepository repo;
 
     public List<User> listAllUsers() {
-        return (List<User>) repo.findAll();
+        return repo.findAll();
     }
 
     public void save(User user) {

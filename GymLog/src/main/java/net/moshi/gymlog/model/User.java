@@ -1,4 +1,4 @@
-package net.moshi.gymlog.User;
+package net.moshi.gymlog.model;
 
 import javax.persistence.*;
 
@@ -20,9 +20,6 @@ public class User {
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person person;
 
-    public Person getPerson() {
-        return person;
-    }
 
     @Column(nullable = false, length = 20)
     private String firstName;
@@ -32,10 +29,6 @@ public class User {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getEmail() {

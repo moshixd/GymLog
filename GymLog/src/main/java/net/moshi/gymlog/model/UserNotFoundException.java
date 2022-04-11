@@ -1,4 +1,4 @@
-package net.moshi.gymlog.User;
+package net.moshi.gymlog.model;
 
 public class UserNotFoundException extends Throwable {
     public UserNotFoundException(String message) {
