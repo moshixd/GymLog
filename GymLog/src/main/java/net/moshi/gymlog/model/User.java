@@ -1,9 +1,17 @@
 package net.moshi.gymlog.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@SecondaryTable(name = "persons", pkJoinColumns = @PrimaryKeyJoinColumn(name = "user_id"))
+@Getter
+@Setter
+@ToString
 public class User {
 
     @Id
@@ -16,51 +24,16 @@ public class User {
     @Column(nullable = false, length = 64)
     private String password;
 
-    @OneToOne(targetEntity = Person.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "person_id")
-    private Person person;
-
-
     @Column(nullable = false, length = 20)
     private String firstName;
 
     @Column(nullable = false, length = 20)
     private String lastName;
 
-    public Integer getId() {
-        return id;
-    }
+    @Column(name = "body_weight", table = "persons")
+    boolean body_weight;
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
+    @Column(name = "height", table = "persons")
+    boolean height;
 }
+

@@ -1,7 +1,6 @@
 package net.moshi.gymlog.service;
 
 import net.moshi.gymlog.model.Person;
-import net.moshi.gymlog.model.Records;
 import net.moshi.gymlog.repository.PersonRepository;
 import net.moshi.gymlog.repository.RecordsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,11 @@ public class PersonService {
 
     public List<Person> ListAllPersons() {
         return personRepository.findAll();
+    }
+
+    public Person getPerson(Integer id){
+        personRepository.findById(id);
+        return getPerson(id);
     }
 
     public void addRecords() {

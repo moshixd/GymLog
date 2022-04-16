@@ -15,14 +15,4 @@ public class GymLogApplication {
     public static void main(String[] args) {
         SpringApplication.run(GymLogApplication.class, args);
     }
-
-    @Bean
-    CommandLineRunner run(RecordsRepository recorep, PersonService personService) {
-        return args -> {
-            recorep.save(new Records(1,"bench",100,200,300));
-
-            personService.addRecords();
-
-        };
-    }
 }

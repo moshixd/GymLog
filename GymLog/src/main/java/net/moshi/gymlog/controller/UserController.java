@@ -19,9 +19,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    public UserController() {
-    }
-
     @GetMapping({"/list_users"})
     public String viewUsersList(Model model) {
         List<User> listUsers = userService.listAllUsers();
