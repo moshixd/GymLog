@@ -1,31 +1,21 @@
 package net.moshi.gymlog.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.*;
-import java.util.Collection;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Table;
 
+@Embeddable
+@Table(name = "persons")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Entity
-@Table(schema = "person")
 public class Person {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    @Column
+    private String body_weight;
 
-    @Column(nullable = false, length = 20)
-    private float bodyWeight;
-
-    @Column(nullable = false, length = 20)
+    @Column
     private float height;
-
-    @OneToMany
-    private Collection<Records> records;
-
 }

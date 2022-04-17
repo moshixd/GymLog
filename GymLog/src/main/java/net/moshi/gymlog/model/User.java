@@ -30,10 +30,7 @@ public class User {
     @Column(nullable = false, length = 20)
     private String lastName;
 
-    @Column(name = "body_weight", table = "persons")
-    boolean body_weight;
-
-    @Column(name = "height", table = "persons")
-    boolean height;
+    @Embedded
+    Person person;
 }
 
