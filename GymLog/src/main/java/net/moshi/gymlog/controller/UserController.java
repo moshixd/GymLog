@@ -1,7 +1,9 @@
 package net.moshi.gymlog.controller;
 
+import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.model.UserNotFoundException;
+import net.moshi.gymlog.service.PersonService;
 import net.moshi.gymlog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -18,6 +20,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private PersonService personService;
 
     @GetMapping({"/list_users"})
     public String viewUsersList(Model model) {
@@ -38,7 +42,10 @@ public class UserController {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-        userService.save(user);
+        User registeredUser = userService.save(user);
+        Person person = new Person(registeredUser);
+        person = personService.save(person);
+
         ra.addFlashAttribute("message", "The user has been saved successfully");
         return "redirect:/list_users";
     }
@@ -67,4 +74,3 @@ public class UserController {
         }
     }
 }
-

@@ -1,21 +1,31 @@
 package net.moshi.gymlog.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.lang.Nullable;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Embeddable
+@Entity
 @Table(name = "persons")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
 
-    @Column
-    private String body_weight;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column
+    @Nullable
+    private float body_weight;
+    @Nullable
     private float height;
+
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public Person(User registeredUser) {
+    }
 }

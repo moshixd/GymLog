@@ -1,17 +1,18 @@
 package net.moshi.gymlog.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@SecondaryTable(name = "persons", pkJoinColumns = @PrimaryKeyJoinColumn(name = "user_id"))
+@NoArgsConstructor
+@Transactional
 @Getter
 @Setter
-@ToString
 public class User {
 
     @Id
@@ -30,7 +31,8 @@ public class User {
     @Column(nullable = false, length = 20)
     private String lastName;
 
-    @Embedded
-    Person person;
+    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL)
+    private Person person;
 }
 

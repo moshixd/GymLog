@@ -22,14 +22,14 @@ public class UserService {
         return repo.findAll();
     }
 
-    public void save(User user) {
-        repo.save(user);
+    public User save(User user) {
+        return repo.save(user);
     }
 
     public User getById(Integer id) throws UserNotFoundException {
         Optional<User> result = repo.findById(id);
         if (result.isPresent()) {
-            return (User) result.get();
+            return result.get();
         } else {
             throw new UserNotFoundException("Could not find any users with ID." + id);
         }
@@ -38,6 +38,5 @@ public class UserService {
     public void deleteById(Integer id) throws UserNotFoundException {
         repo.deleteById(id);
     }
-
 }
 
