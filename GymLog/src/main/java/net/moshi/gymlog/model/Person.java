@@ -6,11 +6,12 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "persons")
+@Table(name = "person")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Person {
 
     @Id
@@ -22,10 +23,7 @@ public class Person {
     @Nullable
     private float height;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
+    @OneToOne(mappedBy = "person")
     private User user;
 
-    public Person(User registeredUser) {
-    }
 }

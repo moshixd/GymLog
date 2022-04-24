@@ -20,8 +20,13 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
-    @Autowired
-    private PersonService personService;
+
+    @GetMapping({"list_user/{id}"})
+    public String viewUser(@PathVariable("id") Integer id, Model model) throws UserNotFoundException {
+        User user = userService.getById(id);
+        model.addAttribute("user", user);
+        return "user";
+    }
 
     @GetMapping({"/list_users"})
     public String viewUsersList(Model model) {
@@ -33,19 +38,18 @@ public class UserController {
     @GetMapping({"/register"})
     public String showSignUpForm(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("person", new Person());
         model.addAttribute("pageTitle", "Add new user");
         return "signUp_form";
     }
 
     @PostMapping({"/process_register"})
-    public String processRegistration(User user, RedirectAttributes ra) {
+    public String processRegistration(User user, Person person, RedirectAttributes ra) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
+        user.setPerson(person);
         User registeredUser = userService.save(user);
-        Person person = new Person(registeredUser);
-        person = personService.save(person);
-
         ra.addFlashAttribute("message", "The user has been saved successfully");
         return "redirect:/list_users";
     }

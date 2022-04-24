@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @NoArgsConstructor
 @Transactional
 @Getter
@@ -31,8 +31,12 @@ public class User {
     @Column(nullable = false, length = 20)
     private String lastName;
 
-    @OneToOne(mappedBy = "user", fetch = FetchType.EAGER,
-            cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_person",
+            joinColumns =
+                    {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            inverseJoinColumns =
+                    {@JoinColumn(name = "person_id", referencedColumnName = "id")})
     private Person person;
 }
 

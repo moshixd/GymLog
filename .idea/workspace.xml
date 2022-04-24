@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Adding multiple tables one entity">
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/repository/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/PersonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/TestSecondaryTable.java" afterDir="false" />
+    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Removing duplicate">
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/GymLogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/GymLogApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/person.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/TestSecondaryTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/PersonRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +32,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -140,10 +140,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.GymLogApplication">
-    <configuration name="generated-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="UserRepositoryTests.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GymLog" />
       <extension name="coverage">
         <pattern>
@@ -152,14 +149,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
-      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.testCreateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GymLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.moshi.gymlog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="testCreateUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testDeleteUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRepositoryTest.testDeleteUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GymLog" />
       <extension name="coverage">
         <pattern>
@@ -168,14 +180,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
-      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTests" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
       <option name="METHOD_NAME" value="testDeleteUserById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testFindAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRepositoryTest.testEditUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GymLog" />
       <extension name="coverage">
         <pattern>
@@ -184,14 +196,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
-      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindAllUsers" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="testEditUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRepositoryTest.testFindUserByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GymLog" />
       <extension name="coverage">
         <pattern>
@@ -200,8 +212,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
-      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testUpdateUser" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindUserByEmail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -219,20 +231,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.generated-requests#1" />
-      <item itemvalue="JUnit.UserRepositoryTests.testDeleteUser" />
-      <item itemvalue="JUnit.UserRepositoryTests.testDeleteUserById" />
-      <item itemvalue="JUnit.UserRepositoryTests.testFindAllUsers" />
-      <item itemvalue="JUnit.UserRepositoryTests.testUpdateUser" />
       <item itemvalue="Spring Boot.GymLogApplication" />
+      <item itemvalue="JUnit.UserRepositoryTests" />
+      <item itemvalue="JUnit.UserRepositoryTest.testDeleteUserById" />
+      <item itemvalue="JUnit.UserRepositoryTest.testCreateUser" />
+      <item itemvalue="JUnit.UserRepositoryTest.testFindUserByEmail" />
+      <item itemvalue="JUnit.UserRepositoryTest.testEditUser" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserRepositoryTests.testUpdateUser" />
-        <item itemvalue="JUnit.UserRepositoryTests.testFindAllUsers" />
-        <item itemvalue="JUnit.UserRepositoryTests.testDeleteUserById" />
-        <item itemvalue="JUnit.UserRepositoryTests.testDeleteUser" />
-        <item itemvalue="HTTP Request.generated-requests#1" />
+        <item itemvalue="JUnit.UserRepositoryTest.testDeleteUserById" />
+        <item itemvalue="JUnit.UserRepositoryTest.testEditUser" />
+        <item itemvalue="JUnit.UserRepositoryTest.testFindUserByEmail" />
+        <item itemvalue="JUnit.UserRepositoryTest.testCreateUser" />
+        <item itemvalue="JUnit.UserRepositoryTests" />
       </list>
     </recent_temporary>
   </component>
@@ -271,6 +283,8 @@
       <workItem from="1649793324707" duration="1569000" />
       <workItem from="1650136512492" duration="21650000" />
       <workItem from="1650561964333" duration="1357000" />
+      <workItem from="1650566191144" duration="2175000" />
+      <workItem from="1650612784854" duration="15469000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -356,7 +370,13 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1650187400675</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL−00015" summary="Removing duplicate">
+      <created>1650566296843</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1650566296843</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +398,8 @@
     <MESSAGE value="reback" />
     <MESSAGE value="update" />
     <MESSAGE value="Adding multiple tables one entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding multiple tables one entity" />
+    <MESSAGE value="Removing duplicate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing duplicate" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GymLog$GymLogApplication.ic" NAME="GymLogApplication Coverage Results" MODIFIED="1643129666030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
