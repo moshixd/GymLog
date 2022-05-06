@@ -2,6 +2,7 @@ package net.moshi.gymlog;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -26,12 +27,14 @@ public class UserRepositoryTest {
     private UserRepository repo;
 
     @Test
-    public void testCreateUser() {
+    public void testCreateUserAndPerson() {
         User user = new User();
+        Person person = new Person();
         user.setEmail("moshixD@gmail.com");
         user.setPassword("moshi2020");
         user.setFirstName("Moshi");
         user.setLastName("Hoshi");
+        user.setPerson(person);
 
         User savedUser = repo.save(user);
 

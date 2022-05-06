@@ -4,21 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Removing duplicate">
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/PersonController.java" afterDir="false" />
+    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Added repo tests, added relationship one to one user to person">
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/edit_Form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/GymLog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/GymLog.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/person.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/TestSecondaryTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/PersonRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/test-classes/net/moshi/gymlog/UserRepositoryTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -117,7 +123,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GymLog/src/main/resources/static/img" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/html-css-course" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -135,26 +141,14 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\patri\Downloads\User_System-Spring-Boot-main\GymLog\GymLog\src\main\resources\static\img" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="net.moshi.gymlog.security" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="net.moshi.gymlog" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.GymLogApplication">
-    <configuration name="UserRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GymLog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="net.moshi.gymlog.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
-      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserRepositoryTest.testCreateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GymLog" />
       <extension name="coverage">
@@ -166,6 +160,22 @@
       <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
       <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
       <option name="METHOD_NAME" value="testCreateUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.testCreateUserAndPerson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GymLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.moshi.gymlog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="net.moshi.gymlog" />
+      <option name="MAIN_CLASS_NAME" value="net.moshi.gymlog.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="testCreateUserAndPerson" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -231,20 +241,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.GymLogApplication" />
-      <item itemvalue="JUnit.UserRepositoryTests" />
       <item itemvalue="JUnit.UserRepositoryTest.testDeleteUserById" />
       <item itemvalue="JUnit.UserRepositoryTest.testCreateUser" />
       <item itemvalue="JUnit.UserRepositoryTest.testFindUserByEmail" />
       <item itemvalue="JUnit.UserRepositoryTest.testEditUser" />
+      <item itemvalue="JUnit.UserRepositoryTest.testCreateUserAndPerson" />
+      <item itemvalue="Spring Boot.GymLogApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTest.testCreateUserAndPerson" />
+        <item itemvalue="JUnit.UserRepositoryTest.testCreateUser" />
         <item itemvalue="JUnit.UserRepositoryTest.testDeleteUserById" />
         <item itemvalue="JUnit.UserRepositoryTest.testEditUser" />
         <item itemvalue="JUnit.UserRepositoryTest.testFindUserByEmail" />
-        <item itemvalue="JUnit.UserRepositoryTest.testCreateUser" />
-        <item itemvalue="JUnit.UserRepositoryTests" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +294,13 @@
       <workItem from="1650136512492" duration="21650000" />
       <workItem from="1650561964333" duration="1357000" />
       <workItem from="1650566191144" duration="2175000" />
-      <workItem from="1650612784854" duration="15469000" />
+      <workItem from="1650612784854" duration="15641000" />
+      <workItem from="1651055788268" duration="3599000" />
+      <workItem from="1651326519835" duration="615000" />
+      <workItem from="1651598587956" duration="297000" />
+      <workItem from="1651756042795" duration="185000" />
+      <workItem from="1651756650027" duration="13521000" />
+      <workItem from="1651796123842" duration="776000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -376,7 +392,13 @@
       <option name="presentableId" value="LOCAL−00015" />
       <updated>1650566296843</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL−00016" summary="Added repo tests, added relationship one to one user to person">
+      <created>1650764368606</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1650764368606</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +421,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="Adding multiple tables one entity" />
     <MESSAGE value="Removing duplicate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing duplicate" />
+    <MESSAGE value="Added repo tests, added relationship one to one user to person" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added repo tests, added relationship one to one user to person" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GymLog$GymLogApplication.ic" NAME="GymLogApplication Coverage Results" MODIFIED="1643129666030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

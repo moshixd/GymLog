@@ -4,8 +4,10 @@ import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +28,14 @@ public class UserService {
         return repo.save(user);
     }
 
+    public User getByEmail(String email) throws UserNotFoundException {
+        return repo.findByEmail(email);
+    }
+
+    public User findByUsername(String username) throws UserNotFoundException {
+        return repo.findByEmail(username);
+    }
+
     public User getById(Integer id) throws UserNotFoundException {
         Optional<User> result = repo.findById(id);
         if (result.isPresent()) {
@@ -37,6 +47,13 @@ public class UserService {
 
     public void deleteById(Integer id) throws UserNotFoundException {
         repo.deleteById(id);
+    }
+
+    public User getCurrentUser(Principal principal) {
+
+        return ((User) SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getPrincipal());
     }
 }
 

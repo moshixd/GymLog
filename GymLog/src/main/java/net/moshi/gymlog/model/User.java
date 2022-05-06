@@ -38,5 +38,6 @@ public class User {
             inverseJoinColumns =
                     {@JoinColumn(name = "person_id", referencedColumnName = "id")})
     private Person person;
+
 }
 
