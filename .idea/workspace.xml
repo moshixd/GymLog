@@ -4,27 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Added repo tests, added relationship one to one user to person">
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/edit_Form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Added userpage">
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/sideBar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/GymLog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/GymLog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/CustomUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/signUp_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/test/java/net/moshi/gymlog/UserRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/CustomUserDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/signUp_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +291,11 @@
       <workItem from="1651598587956" duration="297000" />
       <workItem from="1651756042795" duration="185000" />
       <workItem from="1651756650027" duration="13521000" />
-      <workItem from="1651796123842" duration="776000" />
+      <workItem from="1651796123842" duration="911000" />
+      <workItem from="1651801728149" duration="36000" />
+      <workItem from="1652130325549" duration="3003000" />
+      <workItem from="1652191043628" duration="1134000" />
+      <workItem from="1652267782959" duration="9639000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -398,7 +393,13 @@
       <option name="presentableId" value="LOCAL−00016" />
       <updated>1650764368606</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL−00017" summary="Added userpage">
+      <created>1651797030340</created>
+      <option name="number" value="LOCAL−00017" />
+      <option name="presentableId" value="LOCAL−00017" />
+      <updated>1651797030341</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +423,8 @@
     <MESSAGE value="Adding multiple tables one entity" />
     <MESSAGE value="Removing duplicate" />
     <MESSAGE value="Added repo tests, added relationship one to one user to person" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added repo tests, added relationship one to one user to person" />
+    <MESSAGE value="Added userpage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added userpage" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GymLog$GymLogApplication.ic" NAME="GymLogApplication Coverage Results" MODIFIED="1643129666030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

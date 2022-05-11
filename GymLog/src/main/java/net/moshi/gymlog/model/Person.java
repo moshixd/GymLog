@@ -19,7 +19,7 @@ public class Person {
     private Integer id;
 
     @Nullable
-    private float body_weight;
+    private float bodyWeight;
     @Nullable
     private float height;
 
