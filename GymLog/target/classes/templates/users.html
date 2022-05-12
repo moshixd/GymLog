@@ -21,7 +21,7 @@
 </div>
 <div>
   <table class="table table-striped table-bordered">
-    <thead class="thead-dark">
+    <thead class="table-dark">
     <tr>
       <th>User ID</th>
       <th>E-mail</th>
@@ -47,10 +47,9 @@
     </tbody>
   </table>
 </div>
-
 <div>
   <form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign out"/>
+    <input type="submit" class="btn btn-secondary" value="Sign out"/>
   </form>
 </div>
 </body>
