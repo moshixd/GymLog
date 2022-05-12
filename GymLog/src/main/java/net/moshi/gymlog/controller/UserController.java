@@ -84,7 +84,6 @@ public class UserController {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-        user.setPerson(person);
         User update = userService.save(user);
         ra.addFlashAttribute("message", "The user has been saved successfully");
         return "redirect:/log";
