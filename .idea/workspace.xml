@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Added userpage">
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/sideBar.html" afterDir="false" />
+    <list default="true" id="9d09aa5d-0598-41d7-a3e1-bd67aec7fc3d" name="Changes" comment="Adding image, editing buttons">
+      <change afterPath="$PROJECT_DIR$/GymLog/src/main/resources/static/img/photo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/java/net/moshi/gymlog/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/src/main/resources/templates/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/net/moshi/gymlog/security/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GymLog/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/GymLog/target/classes/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +108,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/html-css-course" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GymLog/src/main/resources/static/img" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -296,6 +290,8 @@
       <workItem from="1652130325549" duration="3003000" />
       <workItem from="1652191043628" duration="1134000" />
       <workItem from="1652267782959" duration="9639000" />
+      <workItem from="1652298653872" duration="2237000" />
+      <workItem from="1652353035784" duration="5083000" />
     </task>
     <task id="LOCAL−00001" summary="reback">
       <created>1647604694189</created>
@@ -399,7 +395,31 @@
       <option name="presentableId" value="LOCAL−00017" />
       <updated>1651797030341</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL−00018" summary="Frontend, new bootstrap and added person data on userpage">
+      <created>1652298874888</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1652298874888</updated>
+    </task>
+    <task id="LOCAL−00019" summary="Frontend, new bootstrap and added person data on userpage">
+      <created>1652353272263</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1652353272264</updated>
+    </task>
+    <task id="LOCAL−00020" summary="Adding image, editing buttons">
+      <created>1652355849479</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1652355849479</updated>
+    </task>
+    <task id="LOCAL−00021" summary="Adding image, editing buttons">
+      <created>1652357592575</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1652357592575</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +444,9 @@
     <MESSAGE value="Removing duplicate" />
     <MESSAGE value="Added repo tests, added relationship one to one user to person" />
     <MESSAGE value="Added userpage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added userpage" />
+    <MESSAGE value="Frontend, new bootstrap and added person data on userpage" />
+    <MESSAGE value="Adding image, editing buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding image, editing buttons" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GymLog$GymLogApplication.ic" NAME="GymLogApplication Coverage Results" MODIFIED="1643129666030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
