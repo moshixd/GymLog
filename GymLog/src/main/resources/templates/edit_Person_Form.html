@@ -17,37 +17,19 @@
     <input type="hidden" th:field="*{id}">
     <div class="border border-secondary rounded p-3">
       <div class="form-group row">
-        <label class="col-sm-4 col-form-label">Bodyweight</label>
+        <label class="col-sm-4 col-form-label">Bodyweight Kg</label>
         <div class="col-sm-8">
           <input type="number" class="form-control" th:field="*{bodyWeight}" required
-                 minlength="40" maxlength="300"/>
+                 minlength="40" maxlength="300" step="0.01"/>
         </div>
       </div>
-
       <div class="form-group row">
-        <label class="col-sm-4 col-form-label">Height</label>
+        <label class="col-sm-4 col-form-label">Height Cm</label>
         <div class="col-sm-8">
           <input type="number" class="form-control" th:field="*{height}" required
                  minlength="100" maxlength="300"/>
         </div>
       </div>
-
-      <div class="form-group row">
-        <label class="col-sm-4 col-form-label">Last name</label>
-        <div class="col-sm-8">
-          <input type="text" class="form-control" th:field="*{lastName}" required
-                 minlength="2" maxlength="20"/>
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <label class="col-sm-4 col-form-label">Password</label>
-        <div class="col-sm-8">
-          <input type="password" class="form-control" th:field="*{password}" required
-                 minlength="6" maxlength="10"/>
-        </div>
-      </div>
-
       <div class="text-center">
         <button type="submit" class="btn btn-primary m-2">Save</button>
         <button type="submit" class="btn btn-secondary m-2" onclick="cancelForm()">Cancel</button>

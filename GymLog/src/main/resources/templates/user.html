@@ -17,7 +17,7 @@
     [[${message}]]
   </div>
   <div>
-    <table class="table table-striped table-bordered">
+    <table class="table table-responsive table-striped table-bordered">
       <thead class="thead-dark">
       <tr>
         <th>User ID</th>
@@ -44,12 +44,12 @@
     </table>
   </div>
   <div>
-    <table class="table table-striped table-bordered">
+    <table class="table table-responsive table-striped table-bordered">
       <thead class="thead-dark">
       <tr>
         <th>Person ID</th>
-        <th>Bodyweight</th>
-        <th>Height</th>
+        <th>Bodyweight Kg</th>
+        <th>Height Cm</th>
         <th></th>
       </tr>
       </thead>
@@ -60,18 +60,15 @@
           <td th:text="${person.bodyWeight}"></td>
           <td th:text="${person.height}"></td>
           <td>
-            <a th:href="@{'/list_users/edit/' + ${person.id}}">Edit</a>
+            <a th:href="@{'/list_user/edit/' + ${person.id}}">Edit</a>
           </td>
         </tr>
       </th:block>
       </tbody>
     </table>
   </div>
-  <div>
-    <form th:action="@{/logout}" method="post">
-      <input type="submit" class="btn btn-secondary" value="Sign out"/>
-    </form>
-  </div>
+
+  <div th:insert="footer"></div>
 </div>
 </body>
 </html>

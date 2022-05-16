@@ -33,7 +33,7 @@ public class PersonController {
     }
 
     @PostMapping({"/process_Person_Edit"})
-    public String processEdit(User user, Person person, RedirectAttributes ra) {
+    public String processEdit( Person person, RedirectAttributes ra) {
         Person update = personService.save(person);
         ra.addFlashAttribute("message", "The person has been saved successfully");
         return "redirect:/log";
