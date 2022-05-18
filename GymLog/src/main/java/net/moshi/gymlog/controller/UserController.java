@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @GetMapping({"/log"})
-    public String loginUser( ) throws UserNotFoundException {
+    public String loginUser() throws UserNotFoundException {
         return "redirect:/list_user/" + getCurrentUser().getEmail();
     }
 

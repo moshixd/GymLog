@@ -1,11 +1,9 @@
 package net.moshi.gymlog.controller;
 
 import net.moshi.gymlog.model.Person;
-import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +31,7 @@ public class PersonController {
     }
 
     @PostMapping({"/process_Person_Edit"})
-    public String processEdit( Person person, RedirectAttributes ra) {
+    public String processEdit(Person person, RedirectAttributes ra) {
         Person update = personService.save(person);
         ra.addFlashAttribute("message", "The person has been saved successfully");
         return "redirect:/log";

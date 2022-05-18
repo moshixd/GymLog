@@ -1,5 +1,6 @@
 package net.moshi.gymlog.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
+@AllArgsConstructor
 @NoArgsConstructor
 @Transactional
 @Getter
@@ -32,14 +34,7 @@ public class User {
     private String lastName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_person",
-            joinColumns =
-                    {@JoinColumn(name = "user_id", referencedColumnName = "id")},
-            inverseJoinColumns =
-                    {@JoinColumn(name = "person_id", referencedColumnName = "id")})
     private Person person;
-
-
 
 }
 

@@ -2,33 +2,29 @@ package net.moshi.gymlog.model;
 
 import lombok.*;
 import org.springframework.lang.Nullable;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "person")
-@Getter
-@Setter
+@Table(name = "exercise")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Person {
+@Transactional
+@Getter
+@Setter
+public class Exercise {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Nullable
-    private float bodyWeight;
+    private float exercise;
     @Nullable
-    private float height;
+    private float weight;
     @Nullable
-    private float squat;
+    private float reps;
     @Nullable
-    private float benchpress;
-    @Nullable
-    private float deadlift;
-
-    @OneToOne(mappedBy = "person")
-    private User user;
+    private float sets;
 }
