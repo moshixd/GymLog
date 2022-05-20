@@ -10,11 +10,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-@AllArgsConstructor
-@NoArgsConstructor
-@Transactional
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Transactional
 public class User {
 
     @Id
@@ -33,7 +33,8 @@ public class User {
     @Column(nullable = false, length = 20)
     private String lastName;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "id_person_id")
     private Person person;
 
 }

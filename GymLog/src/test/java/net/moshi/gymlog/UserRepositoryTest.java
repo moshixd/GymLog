@@ -1,7 +1,5 @@
 package net.moshi.gymlog;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.repository.UserRepository;
@@ -12,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -41,6 +41,7 @@ public class UserRepositoryTest {
         User existUser = entityManager.find(User.class, savedUser.getId());
 
         assertThat(existUser.getId().equals(user.getId()));
+
     }
 
     @Test

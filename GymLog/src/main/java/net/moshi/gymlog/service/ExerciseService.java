@@ -1,7 +1,6 @@
 package net.moshi.gymlog.service;
 
 import net.moshi.gymlog.model.Exercise;
-import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.repository.ExerciseRepository;
 import org.springframework.stereotype.Service;

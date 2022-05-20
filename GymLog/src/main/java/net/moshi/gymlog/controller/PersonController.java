@@ -17,7 +17,7 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @GetMapping({"/list_user/edit/{id}"})
+    @GetMapping({"/list_person/edit/{id}"})
     public String showPersonForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {
         try {
             Person person = personService.getById(id);
@@ -32,7 +32,7 @@ public class PersonController {
 
     @PostMapping({"/process_Person_Edit"})
     public String processEdit(Person person, RedirectAttributes ra) {
-        Person update = personService.save(person);
+        personService.save(person);
         ra.addFlashAttribute("message", "The person has been saved successfully");
         return "redirect:/log";
     }

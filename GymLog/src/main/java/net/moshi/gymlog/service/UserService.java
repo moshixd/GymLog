@@ -1,59 +1,29 @@
 package net.moshi.gymlog.service;
 
+import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.User;
-import net.moshi.gymlog.model.UserNotFoundException;
-import net.moshi.gymlog.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Service;
 
-import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
 
-@Service
-public class UserService {
-    private final UserRepository repo;
+public interface UserService {
+    List<User> listAllUsers();
 
-    @Autowired
-    public UserService(UserRepository repo) {
-        this.repo = repo;
-    }
+    User save(User user);
 
-    public List<User> listAllUsers() {
-        return repo.findAll();
-    }
+    User getByEmail(String email);
 
-    public User save(User user) {
-        return repo.save(user);
-    }
+    User findByUsername(String username);
 
-    public User getByEmail(String email) throws UserNotFoundException {
-        return repo.findByEmail(email);
-    }
+    User getById(Integer id);
 
-    public User findByUsername(String username) throws UserNotFoundException {
-        return repo.findByEmail(username);
-    }
+    void deleteById(Integer id);
 
-    public User getById(Integer id) throws UserNotFoundException {
-        Optional<User> result = repo.findById(id);
-        if (result.isPresent()) {
-            return result.get();
-        } else {
-            throw new UserNotFoundException("Could not find any users with ID." + id);
-        }
-    }
+    User encryptPassword(User user);
 
-    public void deleteById(Integer id) throws UserNotFoundException {
-        repo.deleteById(id);
-    }
+    User createUserandPerson(User user, Person person);
 
-    public User getCurrentUser(Principal principal) {
+    User getCurrentUser();
 
-        return ((User) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal());
-    }
+    User updateUser(User user);
+
 }
-

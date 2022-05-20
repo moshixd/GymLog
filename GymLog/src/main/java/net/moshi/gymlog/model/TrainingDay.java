@@ -1,20 +1,18 @@
 package net.moshi.gymlog.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "trainingday")
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class TrainingDay {
 
     @Id
@@ -24,9 +22,10 @@ public class TrainingDay {
     @Nullable
     private String workout;
 
+    @Nullable
     private Date date;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
 }

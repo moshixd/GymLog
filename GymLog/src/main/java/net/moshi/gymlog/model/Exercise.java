@@ -20,11 +20,16 @@ public class Exercise {
     private Integer id;
 
     @Nullable
-    private float exercise;
+    private String exercise;
     @Nullable
     private float weight;
     @Nullable
-    private float reps;
+    private int reps;
     @Nullable
-    private float sets;
+    private int sets;
+
+//    @ManyToOne
+//    @JoinColumn(name = "training_id", nullable = false)
+//    private TrainingDay trainingDay;
+
 }
