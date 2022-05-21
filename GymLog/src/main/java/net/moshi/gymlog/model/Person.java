@@ -8,6 +8,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -15,6 +17,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Transactional
 public class Person {
 
     @Id
@@ -34,4 +37,11 @@ public class Person {
 
     @OneToOne(mappedBy = "person")
     private User user;
+
+    @OneToMany(
+            //mappedBy = "person"
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<TrainingDay> trainingDays = new ArrayList<>();
 }

@@ -2,9 +2,9 @@ package net.moshi.gymlog.model;
 
 import lombok.*;
 import org.springframework.lang.Nullable;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "trainingday")
@@ -13,6 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Transactional
 public class TrainingDay {
 
     @Id
@@ -22,10 +23,6 @@ public class TrainingDay {
     @Nullable
     private String workout;
 
-    @Nullable
-    private Date date;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    //@ManyToOne(fetch = FetchType.LAZY)
+    //private Person person;
 }

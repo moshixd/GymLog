@@ -19,7 +19,8 @@
     <div th:if="${message}" class="alert alert-success text-center">
       [[${message}]]
     </div>
-    <div>
+    <div class="row">
+      <h3> Your account details</h3>
       <table class="table table-responsive table-striped">
         <thead class="table-dark">
         <tr>
@@ -45,22 +46,26 @@
       </table>
     </div>
     <div>
+      <h3>Your training days</h3>
       <table class="table table-responsive table-striped">
         <thead class="table-dark">
         <tr>
           <th>Training Day ID</th>
           <th>Workout</th>
           <th></th>
+          <th><a th:href="@{/newTrainingDay}">Add Training Day</a></a></th>
+
         </tr>
         </thead>
         <tbody>
-        <th:block th:each="trainingdays : ${foundtrainingday}">
+        <th:block th:each="trainingdays : ${foundtraining}">
           <tr>
             <td th:text="${trainingdays.id}"></td>
             <td th:text="${trainingdays.workout}"></td>
             <td>
               <a th:href="@{'/list_user_training/edit/' + ${trainingdays.id}}">Edit</a>
             </td>
+            <td></td>
           </tr>
         </th:block>
         </tbody>
@@ -68,6 +73,7 @@
     </div>
   </div>
   <div>
+    <h3>Your body details and personal best</h3>
     <table class="table table-responsive table-striped">
       <thead class="table-dark">
       <tr>

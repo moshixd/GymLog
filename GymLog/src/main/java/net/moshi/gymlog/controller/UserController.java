@@ -1,12 +1,11 @@
 package net.moshi.gymlog.controller;
 
 import net.moshi.gymlog.model.Person;
-import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.service.ExerciseService;
 import net.moshi.gymlog.service.PersonService;
-import net.moshi.gymlog.service.TrainingDayService;
+import net.moshi.gymlog.service.TrainingDayServiceImpl;
 import net.moshi.gymlog.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +19,13 @@ import java.util.List;
 @Controller
 public class UserController {
 
-    private final TrainingDayService trainingDayService;
+    private final TrainingDayServiceImpl trainingDayServiceImpl;
     private final ExerciseService exerciseService;
     private final PersonService personService;
     private final UserService userService;
 
-    public UserController(TrainingDayService trainingDayService, ExerciseService exerciseService, PersonService personService, UserService userService) {
-        this.trainingDayService = trainingDayService;
+    public UserController(TrainingDayServiceImpl trainingDayServiceImpl, ExerciseService exerciseService, PersonService personService, UserService userService) {
+        this.trainingDayServiceImpl = trainingDayServiceImpl;
         this.exerciseService = exerciseService;
         this.personService = personService;
         this.userService = userService;
@@ -34,7 +33,7 @@ public class UserController {
 
 
     @GetMapping({"/log"})
-    public String loginUser() throws UserNotFoundException {
+    public String loginUser() {
         return "redirect:/list_user/" + userService.getCurrentUser().getEmail();
     }
 
@@ -42,6 +41,7 @@ public class UserController {
     public String viewUser(@PathVariable("email") String email, Model model) throws UserNotFoundException {
         model.addAttribute("foundUser", userService.getByEmail(email));
         model.addAttribute("foundperson", userService.getByEmail(email).getPerson());
+        model.addAttribute("foundtraining", userService.getByEmail(email).getPerson().getTrainingDays());
         return "user";
     }
 
@@ -50,22 +50,6 @@ public class UserController {
         List<User> listUsers = userService.listAllUsers();
         model.addAttribute("listUsers", listUsers);
         return "users";
-    }
-
-    @GetMapping({"/newTrainingDay"})
-    public String showTrainingForm(Model model) {
-        model.addAttribute("trainingday", new TrainingDay());
-        model.addAttribute("pageTitle", "Add new trainingday");
-        return "new_TrainingDay_Form";
-    }
-
-    @PostMapping({"/process_training"})
-    public String processTraining(TrainingDay trainingDay, RedirectAttributes ra) throws UserNotFoundException {
-        Person person = userService.getCurrentUser().getPerson();
-        TrainingDay newTraining = trainingDayService.save(trainingDay);
-        personService.save(person);
-        ra.addFlashAttribute("message", "The training has been saved successfully");
-        return "redirect:/log";
     }
 
     @GetMapping({"/register"})
