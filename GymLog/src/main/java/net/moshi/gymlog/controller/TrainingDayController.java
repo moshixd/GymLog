@@ -54,4 +54,10 @@ public class TrainingDayController {
         ra.addFlashAttribute("message", "The person has been saved successfully");
         return "redirect:/log";
     }
+
+    @GetMapping({"/list_user_training/delete/{id}"})
+    public String deleteUser(@PathVariable("id") Integer id) {
+        trainingDayService.deleteTrainingdayById(id);
+        return "redirect:/log";
+    }
 }

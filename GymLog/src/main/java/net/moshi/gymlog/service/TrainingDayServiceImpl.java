@@ -57,8 +57,10 @@ public class TrainingDayServiceImpl implements TrainingDayService {
     public void deleteTrainingdayById(Integer id) {
         boolean exist = trainingDayRepository.findById(id).isPresent();
         if (exist) {
+            Person person = userService.getCurrentUser().getPerson();
+            person.getTrainingDays().remove(trainingDayRepository.getById(id));
             trainingDayRepository.deleteById(id);
-        } else throw new UsernameNotFoundException("Could not find any users with ID." + id);
+        } else throw new UsernameNotFoundException("Could not find any training days with ID." + id);
     }
 
 //    @Override
@@ -74,6 +76,7 @@ public class TrainingDayServiceImpl implements TrainingDayService {
     public void addTrainingdayToPerson(TrainingDay trainingDay) {
         Person person = userService.getCurrentUser().getPerson();
         TrainingDay savedTrainingday = trainingDayRepository.save(trainingDay);
+
         person.getTrainingDays().add((savedTrainingday));
         personService.save(person);
     }
