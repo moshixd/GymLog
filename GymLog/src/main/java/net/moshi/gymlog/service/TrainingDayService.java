@@ -1,13 +1,14 @@
 package net.moshi.gymlog.service;
 
+import net.moshi.gymlog.model.Exercise;
 import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.UserNotFoundException;
 
+import java.util.HashMap;
 import java.util.List;
 
 
 public interface TrainingDayService {
-
 
     TrainingDay getById(Integer id);
 
@@ -17,6 +18,7 @@ public interface TrainingDayService {
 
     void deleteTrainingdayById(Integer id);
 
-    void addTrainingdayToPerson(TrainingDay trainingDay) throws UserNotFoundException;
+    void addTrainingdayToPerson(TrainingDay trainingDay, Exercise exercise) throws UserNotFoundException;
 
+    HashMap<Integer, List<Exercise>> getExercisesFromTrainingday();
 }

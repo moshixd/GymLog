@@ -1,5 +1,6 @@
 package net.moshi.gymlog.controller;
 
+import net.moshi.gymlog.model.Exercise;
 import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.service.TrainingDayService;
@@ -35,15 +36,14 @@ public class TrainingDayController {
     @GetMapping({"/newTrainingDay"})
     public String showTrainingForm(Model model) {
         model.addAttribute("trainingday", new TrainingDay());
+        model.addAttribute("exercise", new Exercise());
         model.addAttribute("pageTitle", "Add new trainingday");
         return "new_TrainingDay_Form";
     }
 
     @PostMapping({"/process_training"})
-    public String processTraining(TrainingDay trainingDay, RedirectAttributes ra) throws UserNotFoundException {
-        trainingDayService.addTrainingdayToPerson(trainingDay);
-        //trainingDayService.save(new TrainingDay("workout"));
-
+    public String processTraining(TrainingDay trainingDay, Exercise exercise, RedirectAttributes ra) throws UserNotFoundException {
+        trainingDayService.addTrainingdayToPerson(trainingDay, exercise);
         ra.addFlashAttribute("message", "The training has been saved successfully");
         return "redirect:/log";
     }

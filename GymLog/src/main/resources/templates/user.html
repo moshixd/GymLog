@@ -25,7 +25,6 @@
       <table class="table table-responsive table-striped">
         <thead class="table-dark">
         <tr>
-          <th>User ID</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th></th>
@@ -34,7 +33,6 @@
         <tbody>
         <th:block th:each="user : ${foundUser}">
           <tr>
-            <td th:text="${user.id}"></td>
             <td th:text="${user.firstName}"></td>
             <td th:text="${user.lastName}"></td>
             <td>
@@ -52,22 +50,33 @@
         <thead class="table-dark">
         <tr>
           <th>Workout</th>
-          <th></th>
           <th><a th:href="@{/newTrainingDay}">Add Training Day</a></a></th>
+          <th>Exercises</th>
+          <th></th>
+          <th><a th:href="@{/newExercise}">Add Exercise</a></a></th>
+
         </tr>
         </thead>
         <tbody>
         <th:block th:each="trainingdays : ${foundtraining}">
           <tr>
-            <td th:text="${trainingdays.id}"></td>
             <td th:text="${trainingdays.workout}"></td>
             <td>
               <a th:href="@{'/list_user_training/edit/' + ${trainingdays.id}}">Edit</a>
               <a th:href="@{'/list_user_training/delete/' + ${trainingdays.id}}">Delete</a>
             </td>
-            <td></td>
+            <td th:text="${trainingdays.getExercises()}"></td>
+            <td>
+              <a th:href="@{'/list_user_exercise/edit/' + ${trainingdays.id}}">Edit</a>
+            </td>
           </tr>
         </th:block>
+          <tr th:each="listExercise : ${exercise}">
+            <td th:text="${listExercise.exerciseName}"></td>
+            <td th:text="${listExercise.sets}"></td>
+            <td th:text="${listExercise.reps}"></td>
+            <td th:text="${listExercise.weight}"></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -77,7 +86,6 @@
     <table class="table table-responsive table-striped">
       <thead class="table-dark">
       <tr>
-        <th>Person ID</th>
         <th>Bodyweight Kg</th>
         <th>Height Cm</th>
         <th>Squat Kg</th>
@@ -89,7 +97,6 @@
       <tbody>
       <th:block th:each="person : ${foundperson}">
         <tr>
-          <td th:text="${person.id}"></td>
           <td th:text="${person.bodyWeight}"></td>
           <td th:text="${person.height}"></td>
           <td th:text="${person.squat}"></td>

@@ -20,7 +20,7 @@ public class Exercise {
     private Integer id;
 
     @Nullable
-    private String exercise;
+    private String exerciseName;
     @Nullable
     private float weight;
     @Nullable

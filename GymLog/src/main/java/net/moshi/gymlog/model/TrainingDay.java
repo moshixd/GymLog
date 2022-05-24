@@ -5,6 +5,7 @@ import org.springframework.lang.Nullable;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 @Table(name = "trainingday")
@@ -23,6 +24,9 @@ public class TrainingDay {
     @Nullable
     private String workout;
 
-    //@ManyToOne(fetch = FetchType.LAZY)
-    //private Person person;
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Exercise> exercises = new ArrayList<>();
 }

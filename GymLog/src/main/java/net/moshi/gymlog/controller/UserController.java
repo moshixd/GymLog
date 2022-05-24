@@ -1,11 +1,8 @@
 package net.moshi.gymlog.controller;
 
-import net.moshi.gymlog.model.Person;
-import net.moshi.gymlog.model.User;
-import net.moshi.gymlog.model.UserNotFoundException;
+import net.moshi.gymlog.model.*;
 import net.moshi.gymlog.service.ExerciseService;
-import net.moshi.gymlog.service.PersonService;
-import net.moshi.gymlog.service.TrainingDayServiceImpl;
+import net.moshi.gymlog.service.TrainingDayService;
 import net.moshi.gymlog.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,21 +11,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Controller
 public class UserController {
 
-    private final TrainingDayServiceImpl trainingDayServiceImpl;
-    private final ExerciseService exerciseService;
-    private final PersonService personService;
     private final UserService userService;
+    private final ExerciseService exerciseService;
+    private final TrainingDayService trainingDayService;
 
-    public UserController(TrainingDayServiceImpl trainingDayServiceImpl, ExerciseService exerciseService, PersonService personService, UserService userService) {
-        this.trainingDayServiceImpl = trainingDayServiceImpl;
-        this.exerciseService = exerciseService;
-        this.personService = personService;
+    public UserController(UserService userService, ExerciseService exerciseService, TrainingDayService trainingDayService) {
         this.userService = userService;
+        this.exerciseService = exerciseService;
+        this.trainingDayService = trainingDayService;
     }
 
 
@@ -42,6 +41,26 @@ public class UserController {
         model.addAttribute("foundUser", userService.getByEmail(email));
         model.addAttribute("foundperson", userService.getByEmail(email).getPerson());
         model.addAttribute("foundtraining", userService.getByEmail(email).getPerson().getTrainingDays());
+
+
+        HashMap<Integer, List<Exercise>> exerciseList = trainingDayService.getExercisesFromTrainingday();
+
+
+        for(Map.Entry<Integer, List<Exercise>> entry : exerciseList.entrySet()) {
+            List<Exercise> listExercise = entry.getValue();
+            Integer trainingdayId = entry.getKey();
+
+            model.addAttribute("exercise", listExercise);
+//            TrainingDay trainingDayDB = trainingDayService.getById(trainingdayId);
+//            trainingDayDB.getExercises().add()trainingDayService.(activityID).getVariousListItem());
+//            activityService.addItemToVariousList(entry.getKey(), activityDB);
+//
+//            model.addAttribute("activity", activityService.getActivityById(entry.getKey()));
+
+
+
+        }
+        //model.addAttribute("foundexercises", userService.getByEmail(email).getPerson().getTrainingDays().stream().map(TrainingDay::getExercises).collect(Collectors.toList()));
         return "user";
     }
 

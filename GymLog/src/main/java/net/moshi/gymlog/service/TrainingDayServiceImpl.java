@@ -1,27 +1,32 @@
 package net.moshi.gymlog.service;
 
+import net.moshi.gymlog.model.Exercise;
 import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.TrainingDay;
-import net.moshi.gymlog.model.User;
-import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.repository.TrainingDayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TrainingDayServiceImpl implements TrainingDayService {
     private final TrainingDayRepository trainingDayRepository;
     private final UserService userService;
     private final PersonService personService;
+    private final ExerciseService exerciseService;
 
     @Autowired
-    public TrainingDayServiceImpl(TrainingDayRepository trainingDayRepository, UserService userService, PersonService personService) {
+    public TrainingDayServiceImpl(TrainingDayRepository trainingDayRepository, UserService userService, PersonService personService, ExerciseService exerciseService) {
         this.trainingDayRepository = trainingDayRepository;
         this.userService = userService;
         this.personService = personService;
+        this.exerciseService = exerciseService;
     }
 
     @Override
@@ -35,22 +40,9 @@ public class TrainingDayServiceImpl implements TrainingDayService {
         return trainingDayRepository.findAll();
     }
 
-//    @Override
-//    public TrainingDay save(TrainingDay trainingDay) {
-//        User user = userService.getCurrentUser();
-//        Person person = user.getPerson();
-//        List<TrainingDay> trainingDays = person.getTrainingDays();
-//        person.setTrainingDays(trainingDays);
-//        person.getTrainingDays().add(trainingDay);
-//        TrainingDay savedTrainingday = trainingDayRepository.save(trainingDay);
-//        person.getTrainingDays().add(savedTrainingday);
-//        Person savedPerson = personService.save(person);
-//        return savedTrainingday;
-//    }
-
     @Override
     public TrainingDay save(TrainingDay trainingDay) {
-        return  trainingDayRepository.save(trainingDay);
+        return trainingDayRepository.save(trainingDay);
     }
 
     @Override
@@ -63,33 +55,35 @@ public class TrainingDayServiceImpl implements TrainingDayService {
         } else throw new UsernameNotFoundException("Could not find any training days with ID." + id);
     }
 
-//    @Override
-//    public void addTrainingdayToPerson(TrainingDay trainingDay) throws UserNotFoundException {
-//        trainingDay.setWorkout(trainingDay.getWorkout());
-//        Person person = userService.getCurrentUser().getPerson();
-//        //trainingDay.setPerson(person);
-//        TrainingDay savedDay = trainingDayRepository.save(trainingDay);
-//        person.getTrainingDays().add(savedDay);
-//        personService.save(person);
-//    }
     @Override
-    public void addTrainingdayToPerson(TrainingDay trainingDay) {
+    public void addTrainingdayToPerson(TrainingDay trainingDay, Exercise exercise) {
         Person person = userService.getCurrentUser().getPerson();
         TrainingDay savedTrainingday = trainingDayRepository.save(trainingDay);
-
+        Exercise savedExercice = exerciseService.save(exercise);
         person.getTrainingDays().add((savedTrainingday));
+        savedTrainingday.getExercises().add(savedExercice);
         personService.save(person);
     }
-}
+
+    @Override
+    public HashMap<Integer, List<Exercise>> getExercisesFromTrainingday() {
+        Person person = userService.getCurrentUser().getPerson();
+        List<TrainingDay> trainingDays = person.getTrainingDays();
 
 
-//    public TrainingDay updateTrainingday(TrainingDay trainingDay) {
-//        TrainingDay trainingDayDB
-//        User updatedUser = getCurrentUser();
-//        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//        updatedUser.setFirstName(user.getFirstName());
-//        updatedUser.setLastName(user.getLastName());
-//        updatedUser.setPassword(encoder.encode(user.getPassword()));
-//        return repo.save(updatedUser);
+        //Optional<TrainingDay> trainingday = Optional.ofNullable(trainingDayRepository.findById(id)
+        //        .orElseThrow(() -> new EntityNotFoundException(id.toString())));
+
+        //List<Exercise> getExercises = new ArrayList<>();
+
+        HashMap<Integer, List<Exercise>> exerciseList = new HashMap<>();
+        for (TrainingDay trainingDay : trainingDays) {
+                exerciseList.put(trainingDay.getId(), new ArrayList<>());
+            exerciseList.get(trainingDay.getId()).addAll(trainingDay.getExercises());
+        }
+
+        return exerciseList;
 //    }
+    }
+}
 
