@@ -1,7 +1,6 @@
 package net.moshi.gymlog.service;
 
 import net.moshi.gymlog.model.Exercise;
-import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.UserNotFoundException;
 
 import java.util.List;
@@ -16,6 +15,6 @@ public interface ExerciseService {
 
     void deleteExerciseById(Integer id);
 
-    void addExerciseToTrainingday(Exercise exercise, TrainingDay trainingDay);
+    void addExerciseToTrainingday(Exercise exercise);
 
 }

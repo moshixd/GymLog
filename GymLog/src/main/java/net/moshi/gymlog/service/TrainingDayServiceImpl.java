@@ -8,25 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TrainingDayServiceImpl implements TrainingDayService {
     private final TrainingDayRepository trainingDayRepository;
     private final UserService userService;
     private final PersonService personService;
-    private final ExerciseService exerciseService;
 
     @Autowired
-    public TrainingDayServiceImpl(TrainingDayRepository trainingDayRepository, UserService userService, PersonService personService, ExerciseService exerciseService) {
+    public TrainingDayServiceImpl(TrainingDayRepository trainingDayRepository, UserService userService, PersonService personService) {
         this.trainingDayRepository = trainingDayRepository;
         this.userService = userService;
         this.personService = personService;
-        this.exerciseService = exerciseService;
     }
 
     @Override
@@ -56,34 +50,19 @@ public class TrainingDayServiceImpl implements TrainingDayService {
     }
 
     @Override
-    public void addTrainingdayToPerson(TrainingDay trainingDay, Exercise exercise) {
+    public void addTrainingdayToPerson(TrainingDay trainingDay) {
         Person person = userService.getCurrentUser().getPerson();
         TrainingDay savedTrainingday = trainingDayRepository.save(trainingDay);
-        Exercise savedExercice = exerciseService.save(exercise);
         person.getTrainingDays().add((savedTrainingday));
-        savedTrainingday.getExercises().add(savedExercice);
         personService.save(person);
     }
 
     @Override
-    public HashMap<Integer, List<Exercise>> getExercisesFromTrainingday() {
-        Person person = userService.getCurrentUser().getPerson();
-        List<TrainingDay> trainingDays = person.getTrainingDays();
-
-
-        //Optional<TrainingDay> trainingday = Optional.ofNullable(trainingDayRepository.findById(id)
-        //        .orElseThrow(() -> new EntityNotFoundException(id.toString())));
-
-        //List<Exercise> getExercises = new ArrayList<>();
-
-        HashMap<Integer, List<Exercise>> exerciseList = new HashMap<>();
-        for (TrainingDay trainingDay : trainingDays) {
-                exerciseList.put(trainingDay.getId(), new ArrayList<>());
-            exerciseList.get(trainingDay.getId()).addAll(trainingDay.getExercises());
-        }
-
-        return exerciseList;
-//    }
+    public TrainingDay showExercise(TrainingDay trainingDay) {
+        List<Exercise> getExercise = trainingDay.getExercises();
+        return trainingDay;
     }
+
+
 }
 

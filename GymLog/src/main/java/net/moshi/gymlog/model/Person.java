@@ -39,9 +39,9 @@ public class Person {
     private User user;
 
     @OneToMany(
-            //mappedBy = "person"
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
+    @JoinColumn(name = "person_id")
     private List<TrainingDay> trainingDays = new ArrayList<>();
 }

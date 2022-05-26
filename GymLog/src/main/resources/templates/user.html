@@ -4,113 +4,118 @@
 <head>
   <meta charset="utf-8">
   <title>[[${pageTitle}]]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div th:insert="navbar :: navbarUser">
+<div class="container-fluid m-auto p-lg-4" th:insert="navbar :: navbarUser">
 </div>
-<div class="container-fluid m-5 p-5">
-  <div class="text-center m-auto">
-    <h3>Welcome <h4><b>[[${#request.userPrincipal.principal.email}]]</b></h4></h3>
-  </div>
-  <div class="d-lg-table-row">
-    <div th:if="${message}" class="alert alert-success text-center">
-      [[${message}]]
-    </div>
-    <div class="row">
-      <h3> Your account details</h3>
-      <table class="table table-responsive table-striped">
-        <thead class="table-dark">
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <th:block th:each="user : ${foundUser}">
-          <tr>
-            <td th:text="${user.firstName}"></td>
-            <td th:text="${user.lastName}"></td>
-            <td>
-              <a th:href="@{'/list_user/edit'}">Edit</a>
-              <a th:href="@{'/list_users/delete/' + ${user.id}}">Delete</a>
-            </td>
-          </tr>
-        </th:block>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <h3>Your training days</h3>
-      <table class="table table-responsive table-striped">
-        <thead class="table-dark">
-        <tr>
-          <th>Workout</th>
-          <th><a th:href="@{/newTrainingDay}">Add Training Day</a></a></th>
-          <th>Exercises</th>
-          <th></th>
-          <th><a th:href="@{/newExercise}">Add Exercise</a></a></th>
+<div th:if="${message}" class="alert alert-success text-center">
+  [[${message}]]
+</div>
 
-        </tr>
-        </thead>
-        <tbody>
-        <th:block th:each="trainingdays : ${foundtraining}">
-          <tr>
-            <td th:text="${trainingdays.workout}"></td>
-            <td>
-              <a th:href="@{'/list_user_training/edit/' + ${trainingdays.id}}">Edit</a>
-              <a th:href="@{'/list_user_training/delete/' + ${trainingdays.id}}">Delete</a>
-            </td>
-            <td th:text="${trainingdays.getExercises()}"></td>
-            <td>
-              <a th:href="@{'/list_user_exercise/edit/' + ${trainingdays.id}}">Edit</a>
-            </td>
-          </tr>
-        </th:block>
-          <tr th:each="listExercise : ${exercise}">
-            <td th:text="${listExercise.exerciseName}"></td>
-            <td th:text="${listExercise.sets}"></td>
-            <td th:text="${listExercise.reps}"></td>
-            <td th:text="${listExercise.weight}"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div>
-    <h3>Your body details and personal best</h3>
-    <table class="table table-responsive table-striped">
-      <thead class="table-dark">
+<div class="container-fluid p-lg-4">
+
+  <h3 class="text-center"> Your account details</h3>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Manage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="user : ${foundUser}">
       <tr>
-        <th>Bodyweight Kg</th>
-        <th>Height Cm</th>
-        <th>Squat Kg</th>
-        <th>Benchpress Kg</th>
-        <th>Deadlift Kg</th>
-        <th></th>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td>
+          <a th:href="@{'/list_users/edit/' + ${user.id}}">Edit</a>
+          <a th:href="@{'/list_users/delete/' + ${user.id}}">Delete</a>
+        </td>
       </tr>
-      </thead>
-      <tbody>
-      <th:block th:each="person : ${foundperson}">
-        <tr>
-          <td th:text="${person.bodyWeight}"></td>
-          <td th:text="${person.height}"></td>
-          <td th:text="${person.squat}"></td>
-          <td th:text="${person.benchpress}"></td>
-          <td th:text="${person.deadlift}"></td>
-          <td>
-            <a th:href="@{'/list_person/edit/' + ${person.id}}">Edit</a>
-          </td>
-        </tr>
-      </th:block>
-      </tbody>
-    </table>
-  </div>
-</div>
+    </th:block>
+    </tbody>
+  </table>
+  <h3 class="text-center"> Your personal details</h3>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>Bodyweight Kg</th>
+      <th>Height Cm</th>
+      <th>Squat Kg</th>
+      <th>Benchpress Kg</th>
+      <th>Deadlift Kg</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="person : ${foundperson}">
+      <tr>
+        <td th:text="${person.bodyWeight}"></td>
+        <td th:text="${person.height}"></td>
+        <td th:text="${person.squat}"></td>
+        <td th:text="${person.benchpress}"></td>
+        <td th:text="${person.deadlift}"></td>
+        <td>
+          <a th:href="@{'/list_person/edit/' + ${person.id}}">Edit</a>
+        </td>
+      </tr>
+    </th:block>
+    </tbody>
+  </table>
+  <h3 class="text-center"> Your training day</h3>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>Workout</th>
+      <th>Date</th>
+      <th><a th:href="@{/newTrainingDay}">Add Training Day</a></th>
+      <th>Exercises</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="trainingday : ${foundtraining}">
+      <td th:text="${trainingday.workout}"></td>
+      <td th:text="${trainingday.date}"></td>
+      <td th:text="${trainingday.exercisesDone}"></td>
+      <td>
+        <a th:href="@{'/list_user_training/edit/' + ${trainingday.id}}">Edit</a>
+        <a th:href="@{'/list_user_training/delete/' + ${trainingday.id}}">Delete</a>
+      </td>
+      <td><a th:href="@{/newExercise}">Add Exercise</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <h3 class="text-center"> Your exercises</h3>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+      <th>Exercise name</th>
+      <th>Weight Kg</th>
+      <th>Repetitions</th>
+      <th>Sets</th>
+      <th><a th:href="@{/newExercise}">Add Exercise</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="exercises : ${foundexercises}">
+      <td th:text="${exercises.exerciseName}"></td>
+      <td th:text="${exercises.weight}"></td>
+      <td th:text="${exercises.reps}"></td>
+      <td th:text="${exercises.sets}"></td>
+      <td>
+        <a th:href="@{'/process_exercise_edit/' + ${exercises.id}}">Edit</a>
+        <a th:href="@{'/list_user_training/delete/' + ${exercises.id}}">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 <div th:insert="footer"></div>
 </body>

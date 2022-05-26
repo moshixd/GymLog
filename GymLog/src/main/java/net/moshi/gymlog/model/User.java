@@ -34,7 +34,7 @@ public class User {
     private String lastName;
 
     @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_person_id")
+    @JoinColumn(name = "person_id")
     private Person person;
 
 }
