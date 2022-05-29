@@ -1,9 +1,9 @@
 package net.moshi.gymlog.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.Nullable;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,10 +14,6 @@ import java.util.List;
 @Table(name = "trainingday")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Transactional
 public class TrainingDay {
 
     @Id
@@ -26,9 +22,6 @@ public class TrainingDay {
 
     @Nullable
     private String workout;
-
-    @Nullable
-    private String exercisesDone;
 
     @Nullable
     @Basic
@@ -40,6 +33,8 @@ public class TrainingDay {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    @JoinColumn(name = "trainingday_id")
+    @JoinColumn(name = "training_day_id")
     private List<Exercise> exercises = new ArrayList<>();
+
+
 }

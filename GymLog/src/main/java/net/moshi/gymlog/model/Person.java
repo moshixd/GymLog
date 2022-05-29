@@ -1,11 +1,8 @@
 package net.moshi.gymlog.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.Nullable;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,9 +12,6 @@ import java.util.List;
 @Table(name = "person")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Transactional
 public class Person {
 
     @Id
@@ -44,4 +38,5 @@ public class Person {
     )
     @JoinColumn(name = "person_id")
     private List<TrainingDay> trainingDays = new ArrayList<>();
+
 }

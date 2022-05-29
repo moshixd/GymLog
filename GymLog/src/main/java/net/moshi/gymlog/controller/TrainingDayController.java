@@ -3,7 +3,6 @@ package net.moshi.gymlog.controller;
 import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.service.TrainingDayService;
-import net.moshi.gymlog.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +12,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class TrainingDayController {
-
-
     private final TrainingDayService trainingDayService;
-    private final UserService userService;
 
-    public TrainingDayController(TrainingDayService trainingDayService, UserService userService) {
+    public TrainingDayController(TrainingDayService trainingDayService) {
         this.trainingDayService = trainingDayService;
-        this.userService = userService;
     }
-
 
     @GetMapping({"/list_user_training/edit/{id}"})
     public String showTrainingDayForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {

@@ -7,7 +7,6 @@ import java.util.List;
 
 
 public interface TrainingDayService {
-
     TrainingDay getById(Integer id);
 
     List<TrainingDay> listAllTrainingDays();
@@ -17,6 +16,4 @@ public interface TrainingDayService {
     void deleteTrainingdayById(Integer id);
 
     void addTrainingdayToPerson(TrainingDay trainingDay) throws UserNotFoundException;
-
-    TrainingDay showExercise(TrainingDay trainingDay);
 }

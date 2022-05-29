@@ -1,10 +1,7 @@
 package net.moshi.gymlog.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
@@ -12,9 +9,6 @@ import javax.persistence.*;
 @Table(name = "user")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Transactional
 public class User {
 
     @Id

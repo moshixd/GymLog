@@ -1,6 +1,7 @@
 package net.moshi.gymlog.service;
 
 import net.moshi.gymlog.model.Exercise;
+import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.model.UserNotFoundException;
 import net.moshi.gymlog.repository.ExerciseRepository;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -12,12 +13,10 @@ import java.util.Optional;
 @Service
 public class ExerciseServiceImpl implements ExerciseService {
     private final ExerciseRepository repo;
-    private final UserService userService;
     private final TrainingDayService trainingDayService;
 
-    public ExerciseServiceImpl(ExerciseRepository repo, UserService userService, TrainingDayService trainingDayService) {
+    public ExerciseServiceImpl(ExerciseRepository repo, TrainingDayService trainingDayService) {
         this.repo = repo;
-        this.userService = userService;
         this.trainingDayService = trainingDayService;
     }
 
@@ -50,10 +49,11 @@ public class ExerciseServiceImpl implements ExerciseService {
     }
 
     @Override
-    public void addExerciseToTrainingday(Exercise exercise) {
-
-        Exercise savedExercise = repo.save(exercise);
-
+    public void addExerciseToTrainingday(Exercise exercise, Integer id) {
+        TrainingDay trainingday = trainingDayService.getById(id);
+        repo.save(exercise);
+        trainingday.getExercises().add(exercise);
+        trainingDayService.save(trainingday);
     }
 }
 

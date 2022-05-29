@@ -18,8 +18,6 @@ public interface UserService {
 
     void deleteById(Integer id);
 
-    User encryptPassword(User user);
-
     User createUserandPerson(User user, Person person);
 
     User getCurrentUser();

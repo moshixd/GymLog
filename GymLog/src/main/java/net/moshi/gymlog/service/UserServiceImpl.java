@@ -16,7 +16,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserRepository repo;
 
     @Autowired
@@ -41,24 +41,15 @@ public class UserServiceImpl implements UserService{
     }
 
     public User getById(Integer id) {
-       return repo.findById(id).orElseThrow(() -> new UsernameNotFoundException("Could not find any users with ID." + id));
-        }
-
+        return repo.findById(id).orElseThrow(() -> new UsernameNotFoundException("Could not find any users with ID." + id));
+    }
 
     public void deleteById(Integer id) {
         boolean exist = repo.findById(id).isPresent();
-        if(exist) {
+        if (exist) {
             repo.deleteById(id);
         } else throw new UsernameNotFoundException("Could not find any users with ID." + id);
     }
-
-
-
-    @Override
-    public User encryptPassword(User user) {
-        return null;
-    }
-
 
     @Override
     public User createUserandPerson(User user, Person person) {
@@ -67,7 +58,7 @@ public class UserServiceImpl implements UserService{
         user.setPassword(encodedPassword);
         user.setPerson(person);
         User registeredUser = save(user);
-        return null;
+        return registeredUser;
     }
 
     @Override

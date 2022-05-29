@@ -3,8 +3,6 @@ package net.moshi.gymlog.controller;
 import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.User;
 import net.moshi.gymlog.model.UserNotFoundException;
-import net.moshi.gymlog.service.ExerciseService;
-import net.moshi.gymlog.service.TrainingDayService;
 import net.moshi.gymlog.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,17 +15,11 @@ import java.util.List;
 
 @Controller
 public class UserController {
-
     private final UserService userService;
-    private final ExerciseService exerciseService;
-    private final TrainingDayService trainingDayService;
 
-    public UserController(UserService userService, ExerciseService exerciseService, TrainingDayService trainingDayService) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.exerciseService = exerciseService;
-        this.trainingDayService = trainingDayService;
     }
-
 
     @GetMapping({"/log"})
     public String loginUser() {
@@ -39,21 +31,6 @@ public class UserController {
         model.addAttribute("foundUser", userService.getByEmail(email));
         model.addAttribute("foundperson", userService.getByEmail(email).getPerson());
         model.addAttribute("foundtraining", userService.getByEmail(email).getPerson().getTrainingDays());
-        model.addAttribute("foundexercises", exerciseService.listAllExercises());
-//        HashMap<Integer, List<Exercise>> exerciseList = trainingDayService.getExercisesFromTrainingday();
-//        for(Map.Entry<Integer, List<Exercise>> entry : exerciseList.entrySet()) {
-//            List<Exercise> listExercise = entry.getValue();
-//            Integer trainingdayId = entry.getKey();
-//
-//            model.addAttribute("exercise", listExercise);
-//            TrainingDay trainingDayDB = trainingDayService.getById(trainingdayId);
-//            trainingDayDB.getExercises().add()trainingDayService.(activityID).getVariousListItem());
-//            activityService.addItemToVariousList(entry.getKey(), activityDB);
-//
-//            model.addAttribute("activity", activityService.getActivityById(entry.getKey()));
-
-
-        //model.addAttribute("foundexercises", userService.getByEmail(email).getPerson().getTrainingDays().stream().map(TrainingDay::getExercises).collect(Collectors.toList()));
         return "user";
     }
 

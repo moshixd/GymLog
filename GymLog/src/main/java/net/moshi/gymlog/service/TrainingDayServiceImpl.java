@@ -1,6 +1,5 @@
 package net.moshi.gymlog.service;
 
-import net.moshi.gymlog.model.Exercise;
 import net.moshi.gymlog.model.Person;
 import net.moshi.gymlog.model.TrainingDay;
 import net.moshi.gymlog.repository.TrainingDayRepository;
@@ -56,13 +55,6 @@ public class TrainingDayServiceImpl implements TrainingDayService {
         person.getTrainingDays().add((savedTrainingday));
         personService.save(person);
     }
-
-    @Override
-    public TrainingDay showExercise(TrainingDay trainingDay) {
-        List<Exercise> getExercise = trainingDay.getExercises();
-        return trainingDay;
-    }
-
-
 }
+
 

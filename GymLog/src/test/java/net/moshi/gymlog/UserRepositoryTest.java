@@ -27,6 +27,7 @@ public class UserRepositoryTest {
     private UserRepository repo;
 
     @Test
+    @Rollback
     public void testCreateUserAndPerson() {
         User user = new User();
         Person person = new Person();

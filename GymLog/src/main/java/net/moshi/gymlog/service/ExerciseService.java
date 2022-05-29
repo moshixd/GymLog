@@ -15,6 +15,6 @@ public interface ExerciseService {
 
     void deleteExerciseById(Integer id);
 
-    void addExerciseToTrainingday(Exercise exercise);
+    void addExerciseToTrainingday(Exercise exercise, Integer id);
 
 }

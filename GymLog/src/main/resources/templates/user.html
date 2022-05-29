@@ -18,7 +18,6 @@
 </div>
 
 <div class="container-fluid p-lg-4">
-
   <h3 class="text-center"> Your account details</h3>
   <table class="table table-bordered table-hover">
     <thead class="table-dark">
@@ -81,38 +80,13 @@
     </thead>
     <tbody>
     <tr th:each="trainingday : ${foundtraining}">
-      <td th:text="${trainingday.workout}"></td>
+      <td><a th:href="@{'/exercises/' + ${trainingday.id}}"><span th:text="${trainingday.workout}"/></a></td>
       <td th:text="${trainingday.date}"></td>
-      <td th:text="${trainingday.exercisesDone}"></td>
       <td>
         <a th:href="@{'/list_user_training/edit/' + ${trainingday.id}}">Edit</a>
         <a th:href="@{'/list_user_training/delete/' + ${trainingday.id}}">Delete</a>
       </td>
-      <td><a th:href="@{/newExercise}">Add Exercise</a></td>
-    </tr>
-    </tbody>
-  </table>
-  <h3 class="text-center"> Your exercises</h3>
-  <table class="table table-bordered table-hover">
-    <thead class="table-dark">
-    <tr>
-      <th>Exercise name</th>
-      <th>Weight Kg</th>
-      <th>Repetitions</th>
-      <th>Sets</th>
-      <th><a th:href="@{/newExercise}">Add Exercise</a></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="exercises : ${foundexercises}">
-      <td th:text="${exercises.exerciseName}"></td>
-      <td th:text="${exercises.weight}"></td>
-      <td th:text="${exercises.reps}"></td>
-      <td th:text="${exercises.sets}"></td>
-      <td>
-        <a th:href="@{'/process_exercise_edit/' + ${exercises.id}}">Edit</a>
-        <a th:href="@{'/list_user_training/delete/' + ${exercises.id}}">Delete</a>
-      </td>
+      <td><a th:href="@{'/newExercise/' + ${trainingday.id}}">Add Exercise</a></td>
     </tr>
     </tbody>
   </table>

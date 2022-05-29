@@ -6,14 +6,12 @@
   <meta charset="utf-8">
   <title>Gym Log</title>
   <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
-
 </head>
 <body>
 <div class="container-fluid text-center">
   <div>
     <h1>Edit Person</h1>
   </div>
-
   <form th:action="@{/process_Person_Edit}" method="post" th:object="${person}"
         style="max-width: 500px; margin: 0 auto;">
     <input type="hidden" th:field="*{id}">
